@@ -1,177 +1,63 @@
-
 body {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    background: #fae1dd;
+    background-color: #73c8a9;
+    font-family: 'Press Start 2P', cursive;
+    background-image: linear-gradient(to right, #73c8a9, #373b44);
 }
 
-.container {
-    position: relative;
+canvas {
+    border: 5px solid #2e2e2e;
+    border-radius: 10px;
+    display: block;
+    margin: 50px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: url('assets/Flappy_Bird_Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* we will make the end menu overlap the game canvas, so we need here a lower z-index */
+    z-index: 1;
 }
 
-
-.valentines{
-    position: relative;
-    top: 50px;
-    cursor: pointer;
-    animation: up 3s linear infinite;
+.backdrop-blur {
+    filter: blur(5px);
 }
 
-
-.envelope{
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background: #f08080;
-    display: grid;
-    place-items: center;
-}
-
-.envelope::before{
-    content: '';
-    position: absolute;
-    width: 212px;
-    height: 212px;
-    background: #f08080;
-    transform: rotate(45deg);
-    top: -150px;
-    left:44px;
-    border-radius: 30px 0 0 0;
-}
-
-
-.front {
-    position: absolute;
-    border-right: 180px solid #f4978e;
-    border-top:  95px solid transparent;
-    border-bottom: 100px solid transparent;
-    left:120px;
-    top:5px;
-    width: 0;
-    height: 0;
-    z-index: 10;
-}
-
-
-.front::before {
-    position: absolute;
-    content: '';
-    border-left: 300px solid #fda996;
-    border-top: 195px solid transparent;
-    left: -120px;
-    top: -95px;
-}
-
-
-.card {
-    position: relative;
-    width: 250px;
-    height: 180px;
-    background: #fff;
-    border-radius: 2px;
-    display: grid;
-    place-items: center;
-    transition: 1s;
-}
-
-.card::before{
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 2px solid #003049;
-    border-style: dashed;
-}
-
-
-.valentines:hover .card {
-    transform: translateY(-100px);
-}
-
-
-.card .text{
-    font-family: 'Brush Script MT',cursive;
-    font-size: 28px;
+#end-menu {
+    /* we will toggle then the display of the end-menu */
+    display: none;
+    margin: 50px auto;
+    width: 200px;
+    padding: 20px;
     text-align: center;
-    line-height: 25px;
-    color:#003049;
-}
-
-
-
-.card .heart{
-    position: relative;
-    width: 35px;
-    height: 35px;
-    background: red;
-    bottom: 20px;
-    transform: rotate(45deg);
-    border-radius: 50% 0 0 50%;
-}
-
-
-.card .heart::before{
-    content: '';
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: red;
-    border-radius: 0 50% 50% 0;
-    right: 0;
-    transform: rotate(-90deg);
-    transform-origin: top;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 1000;
 }
 
-
-
-.card .heart::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: red;
-    right: -18px;
+#score-display {
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
-@keyframes up{
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50%{
-        transform: translateY(-30px);
-    }
+button {
+    background-color: #2e2e2e;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
 }
 
-
-.valentines::before{
-    content: '';
-    position: absolute;
-    width: 330px;
-    height: 25px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, .3);
-    top: 265px;
-    left: -15px;
-    animation: scale 3s linear infinite;
-}
-
-
-@keyframes scale {
-    0%, 100% {
-        transform: scaleX(1);
-    }
-
-    50% {
-        transform: scaleX(.85);
-    }
-}
-
-
-.text2 {
-    line-height: 2rem;
+button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
