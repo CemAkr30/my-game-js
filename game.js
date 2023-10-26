@@ -40,6 +40,10 @@ document.body.onkeyup = function(e) {
     }
 }
 
+canvas.addEventListener('touchstart', function () {
+    birdVelocity = FLAP_SPEED;
+});
+
 // lets us restart the game if we hit game-over
 document.getElementById('restart-button').addEventListener('click', function() {
     hideEndMenu();
