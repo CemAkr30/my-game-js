@@ -8,7 +8,7 @@ const flappyImg = new Image();
 flappyImg.src = 'assets/flappy_dunk.png';
 
 //Game constants
-const FLAP_SPEED = -3; //Improves the fluidity and accuracy of the bird when moving around the screen
+const FLAP_SPEED = -5; //Improves the fluidity and accuracy of the bird when moving around the screen
 const BIRD_WIDTH = 40;
 const BIRD_HEIGHT = 30;
 const PIPE_WIDTH = 50;
@@ -175,7 +175,7 @@ function loop() {
 
 
     // forgot to mvoe the pipes
-    pipeX -= 1.5;
+    pipeX -= 3;
     // if the pipe moves out of the frame we need to reset the pipe
     if (pipeX < -50) {
         pipeX = 400;
@@ -183,7 +183,7 @@ function loop() {
     }
 
     // apply gravity to the bird and let it move
-    birdVelocity += birdAcceleration;
+    birdVelocity += birdAcceleration * 2;
     birdY += birdVelocity;
 
     // always check if you call the function ...
