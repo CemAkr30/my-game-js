@@ -183,7 +183,7 @@ function loop() {
     }
 
     // apply gravity to the bird and let it move
-    birdVelocity += birdAcceleration * 5;
+    birdVelocity += birdAcceleration * 3;
     birdY += birdVelocity;
 
     // always check if you call the function ...
