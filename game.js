@@ -8,7 +8,7 @@ const flappyImg = new Image();
 flappyImg.src = 'assets/flappy_dunk.png';
 
 //Game constants
-const FLAP_SPEED = 5; //Improves the fluidity and accuracy of the bird when moving around the screen
+const FLAP_SPEED = 15; //Improves the fluidity and accuracy of the bird when moving around the screen
 const BIRD_WIDTH = 40;
 const BIRD_HEIGHT = 30;
 const PIPE_WIDTH = 50;
