@@ -175,7 +175,7 @@ function loop() {
 
 
     // forgot to mvoe the pipes
-    pipeX -= 6;
+    pipeX -= 8;
     // if the pipe moves out of the frame we need to reset the pipe
     if (pipeX < -50) {
         pipeX = 400;
