@@ -175,7 +175,7 @@ function loop() {
 
 
     // forgot to mvoe the pipes
-    pipeX -= 3;
+    pipeX -= 10;
     // if the pipe moves out of the frame we need to reset the pipe
     if (pipeX < -50) {
         pipeX = 400;
@@ -183,7 +183,7 @@ function loop() {
     }
 
     // apply gravity to the bird and let it move
-    birdVelocity += birdAcceleration * 2;
+    birdVelocity += birdAcceleration * 5;
     birdY += birdVelocity;
 
     // always check if you call the function ...
